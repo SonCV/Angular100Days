@@ -6,6 +6,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 @NgModule({
     declarations: [
@@ -17,7 +18,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
         MatSidenavModule,
         MatDividerModule,
         MatCardModule,
-        FlexLayoutModule
+        FlexLayoutModule,
+        BreadcrumbModule
     ],
     exports: [
 
@@ -25,5 +27,5 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 })
 
 export class LayoutsModule {
-    
+
 }

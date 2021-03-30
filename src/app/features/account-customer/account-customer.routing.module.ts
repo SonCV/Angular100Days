@@ -23,7 +23,8 @@ const routes: Routes = [
     component: AccessAccountCustomerComponent
   },
   {
-    path: 'update-account-customer/:id'
+    path: 'update-account-customer/:id',
+    component: AccessAccountCustomerComponent
   }
 ];
 

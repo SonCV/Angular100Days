@@ -3,21 +3,22 @@ import { DetailAccountCustomerComponent } from './detail-account-customer/detail
 import { ListAccountCustomerComponent } from './list-account-customer/list-account-customer.component';
 import { AccessAccountCustomerComponent } from './access-account-customer/access-account-customer.component';
 import { AccountCustomerRoutingModule } from './account-customer.routing.module';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
-    declarations: [
+  declarations: [
     DetailAccountCustomerComponent,
     ListAccountCustomerComponent,
-    AccessAccountCustomerComponent
-    ],
-    imports: [
-      AccountCustomerRoutingModule
-    ],
-    exports: [
-
-    ]
+    AccessAccountCustomerComponent,
+  ],
+  imports: [
+    AccountCustomerRoutingModule,
+    ButtonModule,
+    InputTextModule,
+    TableModule
+  ],
+  exports: [],
 })
-
-export class AccountCustomerModule {
-
-}
+export class AccountCustomerModule {}
