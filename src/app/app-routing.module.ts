@@ -9,7 +9,16 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: () => import('../app/features/account-customer/account-customer.module').then(m => m.AccountCustomerModule)
+        redirectTo: 'day1-installation',
+        pathMatch: 'full'
+      },
+      {
+        path: 'day1-installation',
+        loadChildren: () => import('../app/features/day1-installation/day1-installation.module').then(m => m.Day1InstallationModule)
+      },
+      {
+        path: 'day2-angular-app',
+        loadChildren: () => import('../app/features/day2-angular-app/day2-angular-app.module').then(m => m.Day2AngularAppModule)
       }
     ]
   }
