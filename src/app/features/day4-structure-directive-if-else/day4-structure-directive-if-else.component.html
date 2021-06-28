@@ -1,0 +1,51 @@
+<h1 class="subject">Day 4: ANGULAR STRUCTURE DIRECTIVE - NGIF</h1>
+<h3 class="title">CẤU TRÚC IF-ELSE</h3>
+<p>
+  - Để hiển thị một phần view (template) theo điều kiện chúng ta sử dụng
+  directive *ngIf
+</p>
+<p>
+  - Example: <br />
+  Nếu bạn trên 13 tuổi thì bạn có thể xem nội dung bên dưới
+  {{user.name}} - {{ user.age }} <br />
+</p>
+<p *ngIf="user.age >= 13">
+  BẠN CÓ THỂ XEM NỘI DUNG NÀY VÌ BẠN TRÊN 13 TUỔI
+</p>
+<p>
+  - Ở trên chúng ta mới chỉ dùng trường hợp if, để sử dụng cả if-else chúng ta
+  có 2 cách viết
+</p>
+<p>
+  Cách 1:
+</p>
+<p *ngIf="user.age >= 13">
+  BẠN CÓ THỂ XEM NỘI DUNG NÀY VÌ BẠN TRÊN 13 TUỔI
+</p>
+<p *ngIf="user.age <13">
+  BẠN KHÔNG THỂ XEM NỘI DUNG NÀY VÌ BẠN DƯỚI 13 TUỔI
+</p>
+<p>Cách 2: Sử dụng kết hợp với ng-template</p>
+<p *ngIf="user.age >= 13; else under13">
+  BẠN CÓ THỂ XEM NỘI DUNG NÀY VÌ BẠN TRÊN 13 TUỔI
+</p>
+<ng-template #under13>
+  BẠN KHÔNG THỂ XEM NỘI DUNG NÀY VÌ BẠN DƯỚI 13 TUỔI
+</ng-template>
+<hr />
+<h3 class="title">NG-TEMPLATE</h3>
+<p>
+  - Với cú pháp sử dụng dấu * ở trên, có thể các bạn sẽ thấy nó khác lạ, nhưng
+  thực tế, nó được gọi là Syntactic sugar (giúp nhìn code dễ hiểu, dễ đọc hơn
+  chẳng hạn) được chuyển đổi sang dạng property binding như sau:
+</p>
+<ng-template [ngIf]="user.age >= 14" [ngIfElse]="under14">
+  <div>
+    BẠN CÓ THỂ XEM NỘI DUNG NÀY VÌ BẠN TRÊN 14 TUỔI
+  </div>
+</ng-template>
+<ng-template #under14>
+  <div>
+    BẠN KHÔNG THỂ XEM NỘI DUNG NÀY VÌ BẠN DƯỚI 14 TUỔI
+  </div>
+</ng-template>

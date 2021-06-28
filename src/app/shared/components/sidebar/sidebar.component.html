@@ -7,5 +7,5 @@
         <img src="../../../../assets/images/avatar.jpg" alt="Account Name">
     </div>
     <mat-divider></mat-divider>
-    <a mat-list-item *ngFor="let menu of treeMenu; let index = index" [class.active]="menu.active" class="hover-menu" (click)="onClickMenu(menu, index)">{{menu.name}}</a>
+    <a mat-list-item *ngFor="let menu of treeMenu; let index = index" [class.active]="menu.active" class="hover-menu" (click)="onClickMenu(menu)">{{menu.name}}</a>
 </mat-nav-list>

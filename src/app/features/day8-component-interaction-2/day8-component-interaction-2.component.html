@@ -1,0 +1,26 @@
+<h1 class="subject">Day 8: COMPONENT INTERACTION - PARENT LISTENS FOR CHILD EVENT</h1>
+<table>
+  <thead>
+    <th>Id</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Gender</th>
+    <th>IpAddress</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let author of authors">
+      <td>{{author.id}}</td>
+      <td>{{author.firstName}}</td>
+      <td>{{author.lastName}}</td>
+      <td>{{author.email}}</td>
+      <td>{{author.gender}}</td>
+      <td>{{author.ipAddress}}</td>
+      <td>
+        <button (click)="onViewDetail(author)">Xem chi tiết</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<app-author-detail></app-author-detail>

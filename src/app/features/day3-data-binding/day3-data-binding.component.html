@@ -1,0 +1,43 @@
+<h1 class="subject">Day 3: ANGULAR DATA BINDING</h1>
+<h3 class="title">INTERPOLATION</h3>
+<p>
+  - Interpolation là cách binding data từ code ts sang view bằng cách sử dụng hai cặp dấu ngoặc nhọn lồng nhau,
+  bên trong là một expression
+</p>
+<p>
+  - Example : binding data một object user
+</p>
+<p>
+  name: {{ user.name }} <br />
+  age: {{ user.age }} <br />
+  height: {{ user.height }}
+</p>
+<hr />
+<h3 class="title">PROPERTY BINDING</h3>
+<p>
+  - Cú pháp: [property]="expression"
+</p>
+<p>
+  - Example: truyền value cho một thẻ input: <br />
+  <input [value]="user.name" />
+</p>
+<hr />
+<h3 class="title">EVENT BINDING</h3>
+<p>
+  - Cú pháp: (eventName)="function()"
+</p>
+<p>
+  - Example: event binding của một button, alert lên một thông báo: <br />
+  <button (click)="onClickMe()">Click Me</button>
+</p>
+<hr />
+<h3 class="title">TWO WAY BINDING</h3>
+<p>
+  - Two way binding là sự kết hợp giữ binding từ code ts ra view và ngược lại từ view vào code ts.
+  Khi sử dụng two way binding phải import FormsModule
+</p>
+<p>
+  - Example: <br />
+  <input [(ngModel)]="description" /> <br />
+  Description: {{ description }}
+</p>

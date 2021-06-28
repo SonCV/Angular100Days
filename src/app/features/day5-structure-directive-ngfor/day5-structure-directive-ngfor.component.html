@@ -1,0 +1,78 @@
+<h1 class="subject">Day 5: ANGULAR STRUCTURE DIRECTIVE NGFOROF</h1>
+<h3 class="title">NgFor</h3>
+<div *ngFor="let author of authors">
+  {{author.id}} - {{author.firstName}} {{author.lastName}}
+</div>
+<hr />
+<h3 class="title">MỘT SỐ LOCAL VARIABLE TRONG MỘT NGFOROF TEMPLATE</h3>
+<p>
+  - $implicit: T giá trị của phần tử trong danh sách mỗi lần lặp
+</p>
+<p>
+  - index: number index của lần lặp hiện tại
+</p>
+<p>
+  - count: number số lượng phần tử trong danh sách
+</p>
+<p>
+  - first: boolean trả về true nếu đây là phần tử đầu tiên của mảng, ngược lại
+  trả về false
+</p>
+<p>
+  - last: boolean trả về true nếu đây là phần tử cuối cùng của mảng, ngược lại
+  trả về true
+</p>
+<p>
+  - even: boolean trả về true nếu đây là phần tử nằm ở vị trí chẵn của mảng
+</p>
+<p>
+  - odd: boolean trả về tru nếu đây là phần tử nằm ở vị trí lẻ của mảng
+</p>
+<hr />
+<h3 class="title">CẤU TRÚC NGFOROF VÀ NG-TEMPLATE</h3>
+<p>
+  - Với cấu trúc dùng dấu * như trên chúng ta có thể chuyển đổi tương ứng về
+  dạng ng-template và property binding như sau (ng-template không thể dùng cấu
+  trúc * mà phải dùng dạng property bidning) :
+</p>
+<ng-template
+  ngFor
+  [ngForOf]="authors"
+  let-author
+  let-idx="index"
+  let-total="count">
+  <div>
+    ({{idx}})/({{total}}): {{author.id}} - {{author.firstName}}
+    {{author.lastName}}
+  </div>
+</ng-template>
+<ng-template *ngFor="let author of authors; let idx= index; let total= count">
+  <div>
+    ({{idx}})/({{total}}): {{author.id}} - {{author.firstName}}
+    {{author.lastName}}
+  </div>
+</ng-template>
+<hr />
+<h3 class="title">SỬ DỤNG NHIỀU STRUCUTRE DIRECTIVE TRÊN CÙNG MỘT PHẦN TỬ</h3>
+<p>
+  - Chúng ta không thể đặt nhiều hơn một structure directive lên một phần tử
+  được, như vậy các structure directive sẽ không làm việc và báo lỗi
+</p>
+<p>
+  - Giải pháp là chúng ta thêm một tầng wrapper nữa, như vậy là các structure directive sẽ lồng nhau
+</p>
+<p>
+  - Nếu chúng ta không muốn thêm một thẻ div lồng nhau trong các structrue directive thì chúng ta có thể sử dụng
+  ng-container hoặc ng-template
+</p>
+<p>
+  - Chú ý: Đối với ng-container có thể sử dụng structure directive dạng *, còn với ng-template phải dùng dạng property
+</p>
+<p>
+  - Example:
+</p>
+<div *ngFor="let author of authors">
+  <div *ngIf="author.id == 1">
+    {{author.id}} - {{author.firstName}}  {{author.lastName}}
+  </div>
+</div>

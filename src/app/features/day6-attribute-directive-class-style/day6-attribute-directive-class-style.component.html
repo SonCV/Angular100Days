@@ -1,0 +1,31 @@
+<h1 class="subject">Day 6: ATTRIBUTE DIRECTIVE</h1>
+<h3 class="title">Class binding</h3>
+<p>
+  - Cú pháp 1: [class.className]="variable"
+  - Cú pháp 2: [class]="class_expression" <br />
+  class_expression có thể là một string, array hoặc một object <br />
+  class_expression là một string : [ngClass]="my_class_1 my_class_2 ..." chúng được viết cách nhau bởi một dấu space <br />
+  class_expression là một array: [ngClass]="['my_class_1', 'my_class_2', ...]"
+  class_expression là một object
+</p>
+<p>
+  - Example: <br />
+</p>
+<p [class.class-2]="true">
+  Day 6: ATTRIBUTE DIRECTIVE
+</p>
+<p [ngClass]="['class-1', 'class-2']">
+  Day 6: ATTRIBUTE DIRECTIVE
+</p>
+<p [ngClass]="{
+  'class-1': true,
+  'class-2': true,
+  'class-3': true
+}">
+  Day 6: ATTRIBUTE DIRECTIVE
+</p>
+<hr />
+<h3 class="title">STYLE BINDING</h3>
+<p>
+  - Cú pháp của style binding: [style.property.unit]="expression"
+</p>
